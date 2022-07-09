@@ -53,26 +53,30 @@
 				solonnhat=mang[i];
 			}
 		}
-		let nguyento = ' '
-		for(i=0;i<mang.length;i++){
+		
+		let nguyento = '';
+		for(let i=0; i<mang.length;i++){
+			var flag = true;
+
 			if (mang[i]<2) {
-				nguyento=0
+				flag = false;
 			}
 			else{
-				for(a=2; a <mang[i]-1;a++){
+				for(a=2;a<mang[i]-1;a++){
 					if (mang[i]%a==0) {
-						nguyento=0
+						flag = false;
 						break;
 					}
 				}
 			}
-			if (nguyento==0) {
-				nguyento += ''
+			if (flag == true) {
+				nguyento += mang[i] + ' '
 			}
 			else{
-				nguyento += mang[i]+ ' '
+				nguyento += ' ';
 			}
-	}
+		}
+
 	for(i =0; i< mang.length;i++){
 		 var tong = mang.reduce(function (total, i) {
     return total +i;
